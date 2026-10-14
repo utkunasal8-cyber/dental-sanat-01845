@@ -1,0 +1,698 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özel Dental Sanat Ağız ve Diş Sağlığı Polikliniği | Adana Sarıçam</title>
+
+    <style>
+        /* Genel Tasarım */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #2c3e50;
+            background-color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        /* Üst Bilgi Çubuğu */
+        .topbar {
+            background: #0f172a;
+            color: #94a3b8;
+            font-size: 13px;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+            .topbar a {
+                color: #38bdf8;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+        /* Menü ve Logo */
+        header {
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #0f766e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+            .logo img {
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+            }
+
+            .logo span {
+                color: #0d9488;
+                font-weight: 400;
+            }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+            nav a {
+                text-decoration: none;
+                color: #475569;
+                font-weight: 600;
+                font-size: 15px;
+                transition: 0.2s;
+            }
+
+                nav a:hover {
+                    color: #0d9488;
+                }
+
+        /* Yeşil Karşılama Alanı */
+        .hero {
+            background: linear-gradient( rgba(15, 118, 110, 0.9), rgba(13, 148, 136, 0.85) );
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            max-width: 100%;
+            margin-top: 0;
+        }
+
+            .hero h1 {
+                font-size: 42px;
+                margin-bottom: 20px;
+                font-weight: 800;
+                letter-spacing: -0.5px;
+            }
+
+            .hero p {
+                font-size: 20px;
+                margin-bottom: 35px;
+                max-width: 700px;
+                margin-left: auto;
+                margin-right: auto;
+                opacity: 0.95;
+            }
+
+        .btn-main {
+            display: inline-block;
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 14px 35px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.3);
+            transition: 0.3s;
+        }
+
+            .btn-main:hover {
+                background: #0ea5e9;
+                transform: translateY(-2px);
+            }
+
+        /* İşletme Fotoğraf Galerisi */
+        .isletme-galeri {
+            width: 100%;
+            background: white;
+            padding: 25px 20px;
+        }
+
+        .isletme-galeri-icerik {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .isletme-galeri img {
+            display: block;
+            width: 100%;
+            height: 280px;
+            object-fit: contain;
+            background: #f8fafc;
+            border: none;
+            border-radius: 4px;
+        }
+
+        /* Ortak Bölüm Düzeni */
+        section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+            .section-title h2 {
+                color: #0f766e;
+                font-size: 32px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .section-title p {
+                color: #64748b;
+                font-size: 16px;
+            }
+
+        /* Hizmetler ve Tedaviler */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+            .service-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                border-color: #0d9488;
+            }
+
+            .service-card h3 {
+                color: #0f172a;
+                font-size: 20px;
+                margin-bottom: 12px;
+                font-weight: 700;
+            }
+
+            .service-card p {
+                color: #64748b;
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+
+            .service-card ul {
+                list-style: none;
+                font-size: 13px;
+                color: #475569;
+                border-top: 1px solid #f1f5f9;
+                padding-top: 10px;
+            }
+
+                .service-card ul li {
+                    margin-bottom: 5px;
+                }
+
+                    .service-card ul li::before {
+                        content: "✓ ";
+                        color: #0d9488;
+                        font-weight: bold;
+                    }
+
+        /* Doktorlar */
+        .doctor-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .doctor-card {
+            background: white;
+            width: 280px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .doctor-img {
+            background: #e2e8f0;
+            height: 250px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #94a3b8;
+        }
+
+        .doctor-info {
+            padding: 20px;
+        }
+
+            .doctor-info h3 {
+                font-size: 18px;
+                margin-bottom: 5px;
+                color: #0f172a;
+            }
+
+            .doctor-info p {
+                color: #0d9488;
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+        /* Klinik Özellikleri */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .feature-item {
+            background: #f1f5f9;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+            .feature-item h4 {
+                font-size: 16px;
+                margin-bottom: 8px;
+                color: #0f766e;
+            }
+
+            .feature-item p {
+                font-size: 13px;
+                color: #64748b;
+            }
+
+        /* Sıkça Sorulan Sorular */
+        .faq-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+            .faq-item h4 {
+                color: #0f766e;
+                margin-bottom: 8px;
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .faq-item p {
+                font-size: 14px;
+                color: #64748b;
+            }
+
+        /* İletişim */
+        .contact-section {
+            background: #0f172a;
+            color: white;
+            padding: 80px 20px;
+            max-width: 100%;
+            margin-bottom: 0;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 26px;
+            color: #38bdf8;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .contact-info p {
+            margin-bottom: 18px;
+            font-size: 15px;
+            color: #cbd5e1;
+            text-align: left;
+        }
+
+        .contact-info strong {
+            color: white;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-whatsapp {
+            display: block;
+            background: #22c55e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: 0.3s;
+            margin-top: 25px;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        }
+
+            .btn-whatsapp:hover {
+                background: #16a34a;
+            }
+
+        footer {
+            background: #020617;
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+            font-size: 14px;
+            border-top: 1px solid #1e293b;
+            max-width: 100%;
+        }
+
+        /* Mobil Uyum */
+        @media (max-width: 768px) {
+            .topbar {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+                .logo img {
+                    width: 55px;
+                    height: 55px;
+                }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+                nav a {
+                    margin-left: 0;
+                    font-size: 13px;
+                }
+
+            .hero {
+                padding: 75px 20px;
+            }
+
+                .hero h1 {
+                    font-size: 30px;
+                }
+
+                .hero p {
+                    font-size: 16px;
+                }
+
+            .isletme-galeri-icerik {
+                grid-template-columns: 1fr;
+                max-width: 520px;
+                gap: 15px;
+            }
+
+            .isletme-galeri img {
+                height: 240px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 27px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Bilgi Çubuğu -->
+    <div class="topbar">
+        <span>📍 Sarıçam, Adana | 🕒 Gece 00:00'a Kadar Açık (Pazar Dahil)</span>
+        <span>Acil İletişim: <a href="tel:05473880101">0547 388 01 01</a></span>
+    </div>
+
+    <!-- Menü ve Logo -->
+    <header>
+        <div class="nav-container">
+
+            <div class="logo">
+                <img src="Resimler/logo.jpg" alt="Dental Sanat Logosu">
+                <div>Dental<span>Sanat</span></div>
+            </div>
+
+            <nav>
+                <a href="#tedaviler">Tedaviler</a>
+                <a href="#altyapi">Hizmet Alanları</a>
+                <a href="#sss">S.S.S.</a>
+                <a href="#iletisim">İletişim</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Karşılama Ekranı -->
+    <section class="hero" style="max-width: 100%; margin-top: 0;">
+        <h1>Sağlıklı Gülüşler, Güvenli Eller</h1>
+
+        <p>
+            Özel Dental Sanat bünyesinde en son teknoloji cihazlar ve
+            sterilizasyon standartları ile ağrısız, hızlı ve kalıcı diş
+            tedavileri sunuyoruz.
+        </p>
+
+        <a href="#iletisim" class="btn-main">Hızlı Randevu &amp; Teklif Al</a>
+    </section>
+
+    <!-- İşletme Fotoğrafları: Toplam İki Fotoğraf -->
+    <div class="isletme-galeri">
+        <div class="isletme-galeri-icerik">
+            <img src="Resimler/resim1.jpg" alt="Dental Sanat klinik fotoğrafı 1">
+            <img src="Resimler/resim2.jpg" alt="Dental Sanat klinik fotoğrafı 2">
+        </div>
+    </div>
+
+    <!-- Temel Özellikler Paneli -->
+    <section>
+        <div class="features-grid">
+
+            <div class="feature-item">
+                <h4>Gece 00:00 Hizmeti</h4>
+                <p>Mesai saatleri dışında oluşan ani diş ağrılarınız için gece yarısına kadar açığız.</p>
+            </div>
+
+            <div class="feature-item">
+                <h4>Gelişmiş Teknoloji</h4>
+                <p>Dijital görüntüleme ve modern implant üniteleri ile hatasız teşhis koyuyoruz.</p>
+            </div>
+
+            <div class="feature-item">
+                <h4>%100 Sterilizasyon</h4>
+                <p>Sağlık Bakanlığı standartlarında, tam onaylı ve izole klinik ortamı.</p>
+            </div>
+
+            <div class="feature-item">
+                <h4>Şeffaf Fiyatlandırma</h4>
+                <p>Tedaviye başlamadan önce yapılacak tüm masrafları net olarak bilirsiniz.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Detaylı Tedaviler Bölümü -->
+    <section id="tedaviler">
+        <div class="section-title">
+            <h2>Klinik Tedavi Hizmetlerimiz</h2>
+            <p>Polikliniğimizde uzman ekibimiz tarafından uygulanan başlıca tedaviler ve detayları</p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <h3>İmplant ve Çene Cerrahisi</h3>
+                <p>Eksik dişlerin yerine yerleştirilen titanyum vidalarla fonksiyonel ve estetik koruma sağlıyoruz.</p>
+                <ul>
+                    <li>Tek günde implant uygulaması</li>
+                    <li>Gömülü 20'lik diş operasyonları</li>
+                    <li>Kemik tozu (greft) uygulamaları</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Estetik Diş Hekimliği</h3>
+                <p>Renk, şekil ve dizilim bozukluklarını modern estetik materyaller kullanarak değerlendiriyoruz.</p>
+                <ul>
+                    <li>Zirkonyum ve E-Max Kaplamalar</li>
+                    <li>Yaprak Porselen (Lamine)</li>
+                    <li>Lazerle diş beyazlatma seçenekleri</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Pedodonti (Çocuk Diş Hekimliği)</h3>
+                <p>Çocuklarımızın diş sağlığı için yaşlarına ve ihtiyaçlarına uygun yaklaşımlar.</p>
+                <ul>
+                    <li>Süt dişi çekimi ve dolgusu</li>
+                    <li>Yer tutucu uygulamaları</li>
+                    <li>Fissür örtücü uygulamaları</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Hizmet Alanları -->
+    <section id="altyapi">
+        <div class="section-title">
+            <h2>Hizmet Alanlarımız</h2>
+            <p>Ağız ve diş sağlığı alanındaki hizmetlerimiz</p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <h3>Genel Diş Muayenesi</h3>
+                <p>Ağız ve diş sağlığınızın değerlendirilmesi ve ihtiyaçlarınızın belirlenmesi.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Koruyucu Diş Hekimliği</h3>
+                <p>Diş ve diş eti sağlığının korunmasına yönelik uygulamalar.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Hasta Bilgilendirme</h3>
+                <p>Muayene sonrasında uygun tedavi seçenekleri ve süreç hakkında bilgilendirme.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sıkça Sorulan Sorular -->
+    <section id="sss">
+        <div class="section-title">
+            <h2>Sıkça Sorulan Sorular</h2>
+            <p>Merak ettikleriniz hakkında genel bilgiler</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Nasıl randevu alabilirim?</h4>
+            <p>Telefon üzerinden kliniğimizle iletişime geçerek randevu talep edebilirsiniz.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Tedavi ücretini nasıl öğrenebilirim?</h4>
+            <p>Muayene ve tedavi ihtiyacınız değerlendirildikten sonra fiyat bilgisi alabilirsiniz.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Hangi tedavilerin uygulandığını nasıl öğrenebilirim?</h4>
+            <p>Sunulan hizmetler hakkında kliniğimizle iletişime geçerek bilgi alabilirsiniz.</p>
+        </div>
+    </section>
+
+    <!-- İletişim -->
+    <div id="iletisim" class="contact-section">
+        <div class="contact-container">
+
+            <div class="contact-info">
+                <h3>İletişim Bilgileri</h3>
+
+                <p>
+                    <strong>Adres</strong>
+                    Sarıçam, Adana
+                </p>
+
+                <p>
+                    <strong>Telefon</strong>
+                    <a href="tel:05473880101" style="color:#38bdf8;">0547 388 01 01</a>
+                </p>
+
+                <p>
+                    <strong>Çalışma Saatleri</strong>
+                    Gece 00:00'a kadar (güncel saatleri klinikten teyit edin).
+                </p>
+
+                <a href="https://wa.me/905473880101"
+                   class="btn-whatsapp"
+                   target="_blank"
+                   rel="noopener">
+                    WhatsApp ile İletişim
+                </a>
+            </div>
+
+            <div class="contact-info">
+                <h3>Konum</h3>
+                <p>Adana Sarıçam bölgesindeki kliniğin konumunu haritada görüntüleyebilirsiniz.</p>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=Dental+Sanat+Adana+Sarıçam"
+                   class="btn-whatsapp"
+                   target="_blank"
+                   rel="noopener">
+                    Google Haritalar'da Aç
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Alt Bilgi -->
+    <footer>
+        © 2026 Özel Dental Sanat Ağız ve Diş Sağlığı Polikliniği. Tüm hakları saklıdır.
+    </footer>
+
+</body>
+</html>
+```
